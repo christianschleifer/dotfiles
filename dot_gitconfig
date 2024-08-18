@@ -1,0 +1,24 @@
+[user]
+    name = Christian Schleifer 
+    email = chr.schleifer@gmail.com
+    signingkey = /Users/christian/.ssh/id_ed25519.pub
+
+[pull]
+    rebase = true
+
+[core]
+    autocrlf = input
+
+[alias]
+    rank = shortlog -sn --no-merges
+    ls = log --abbrev-commit --graph --decorate --no-merges --pretty=format:"%C(yellow)%h%C(cyan)%d\\ %Creset%s%C(cyan)\\ [%cn]"
+    lsm = log --abbrev-commit --graph --decorate --pretty=format:"%C(yellow)%h%C(cyan)%d\\ %Creset%s%C(cyan)\\ [%cn]"
+    lsa = log --abbrev-commit --graph --all --decorate --no-merges --pretty=format:"%C(yellow)%h%C(cyan)%d\\ %Creset%s%C(cyan)\\ [%cn]"
+    lsma = log --abbrev-commit --graph --all --decorate --pretty=format:"%C(yellow)%h%C(cyan)%d\\ %Creset%s%C(cyan)\\ [%cn]"
+    co = checkout
+[gpg]
+    format = ssh
+[commit]
+    gpgsign = true
+[gpg "ssh"]
+	allowedSignersFile = /Users/christian/.ssh/id_ed25519.pub
