@@ -1,0 +1,34 @@
+""" Map leader to space ---------------------
+let mapleader=" "
+
+""" Common settings -------------------------
+set showmode
+""" set so=5
+set incsearch
+set nu
+
+""" Idea specific settings ------------------
+set ideajoin
+set idearefactormode=keep
+
+""" Remappings ------------------------------
+nmap gb <Action>(GotoImplementation)
+nmap gn <Action>(ShowIntentionActions)
+nmap gc <Action>(EditorCompleteStatement)
+map <C-t> <Action>(Refactorings.QuickListPopupAction)
+
+""" Plugins  --------------------------------
+
+Plug 'terryma/vim-multiple-cursors'
+nmap <C-n> <Plug>NextWholeOccurrence
+xmap <C-n> <Plug>NextWholeOccurrence
+nmap g<C-n> <Plug>NextOccurrence
+xmap g<C-n> <Plug>NextOccurrence
+nmap <C-x> <Plug>SkipOccurrence
+xmap <C-x> <Plug>SkipOccurrence
+nmap <C-p> <Plug>RemoveOccurrence
+xmap <C-p> <Plug>RemoveOccurrence
+
+Plug 'https://github.com/preservim/nerdtree'
+
+""" End of Plugins  --------------------------------
