@@ -16,14 +16,6 @@ fish_add_path /Users/christian/.local/bin
 fish_add_path /Users/christian/go/bin
 fish_add_path /Users/christian/.cargo/bin
 
-# work specific configuration
-{{- if eq .chezmoi.config.data.work "true" }}
-fish_add_path /Users/cschleif/codebase/scripts/src
-fish_add_path /Users/cschleif/.toolbox/bin
-fish_add_path /Users/cschleif/.local/bin
-
-{{- end }}
-
 if command -v eza > /dev/null
 	abbr -a l 'eza'
 	abbr -a ls 'eza'
