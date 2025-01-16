@@ -28,7 +28,10 @@ end
 set -Ux VISUAL 'nvim'
 set -Ux EDITOR $VISUAL
 
+source $HOME/.cargo/env.fish
+
 # work specific include
 {{- if eq .chezmoi.config.data.work "true" }}
 source ~/.config/fish/work.fish
 {{- end }}
+
