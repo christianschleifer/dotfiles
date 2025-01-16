@@ -82,17 +82,18 @@ vim.g.maplocalleader = "\\"
 -- Setup lazy.nvim
 require("lazy").setup({
 	spec = {
-		-- the colorscheme should be available when starting Neovim
+		{ "ellisonleao/gruvbox.nvim", priority = 1000 , config = true},
 		{
-			"folke/tokyonight.nvim",
-			lazy = false, -- make sure we load this during startup if it is your main colorscheme
-			priority = 1000, -- make sure to load this before all the other start plugins
-			config = function()
-				-- load the colorscheme here
-				vim.cmd([[colorscheme tokyonight]])
-			end,
+			"ibhagwan/fzf-lua",
+			dependencies = { "nvim-tree/nvim-web-devicons" },
+			opts = {}
 		},
-		-- nice bar at the bottom
+		{
+			'ggandor/leap.nvim',
+			config = function()
+				require('leap').create_default_mappings()
+			end
+		}, 
 		{
 			'itchyny/lightline.vim',
 			lazy = false, -- also load at start since it's UI
@@ -133,15 +134,6 @@ require("lazy").setup({
 				)
 			end
 		},
-		{
-			"ibhagwan/fzf-lua",
-			-- optional for icon support
-			dependencies = { "nvim-tree/nvim-web-devicons" },
-			-- or if using mini.icons/mini.nvim
-			-- dependencies = { "echasnovski/mini.icons" },
-			opts = {}
-		}
-
 	},
 	-- automatically check for plugin updates
 	checker = { enabled = true },
@@ -154,5 +146,6 @@ vim.api.nvim_set_keymap("n", "<C-l>", [[<Cmd>lua require"fzf-lua".live_grep_glob
 vim.api.nvim_set_keymap("n", "<C-g>", [[<Cmd>lua require"fzf-lua".grep_project()<CR>]], {})
 vim.api.nvim_set_keymap("n", "<F1>", [[<Cmd>lua require"fzf-lua".help_tags()<CR>]], {})
 
-require("fzf-lua").utils.info(
-  "|<C-\\> buffers|<C-p> files|<C-g> grep|<C-l> live grep|<C-k> builtin|<F1> help|")
+
+vim.o.background = "dark" 
+vim.cmd([[colorscheme gruvbox]])
