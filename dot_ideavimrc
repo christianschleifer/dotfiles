@@ -3,22 +3,14 @@ let mapleader=" "
 
 """ Common settings -------------------------
 set showmode
-""" set so=5
 set incsearch
-set nu
+set relativenumber
 
 """ Idea specific settings ------------------
 set ideajoin
 set idearefactormode=keep
 
-""" Remappings ------------------------------
-nmap gb <Action>(GotoImplementation)
-nmap gn <Action>(ShowIntentionActions)
-nmap gc <Action>(EditorCompleteStatement)
-map <C-t> <Action>(Refactorings.QuickListPopupAction)
-
 """ Plugins  --------------------------------
-
 Plug 'terryma/vim-multiple-cursors'
 nmap <C-n> <Plug>NextWholeOccurrence
 xmap <C-n> <Plug>NextWholeOccurrence
@@ -29,6 +21,26 @@ xmap <C-x> <Plug>SkipOccurrence
 nmap <C-p> <Plug>RemoveOccurrence
 xmap <C-p> <Plug>RemoveOccurrence
 
-Plug 'https://github.com/preservim/nerdtree'
 
-""" End of Plugins  --------------------------------
+""" which-key plugin
+set which-key
+set timeoutlen=10000
+
+set easymotion
+map s <Plug>(easymotion-s)
+
+""" NERDtree plugin
+set NERDTree
+nnoremap <leader>e :NERDTreeFocus<CR>
+
+""" Remapping ------------------------------
+nmap gb <Action>(GotoImplementation)
+nmap gn <Action>(ShowIntentionActions)
+nmap gc <Action>(EditorCompleteStatement)
+map <C-t> <Action>(Refactorings.QuickListPopupAction)
+
+""" emulate open buffers
+nnoremap <leader>, :action RecentFiles<CR>
+""" emulate find files
+nnoremap <leader><leader> :action GotoFile<CR>
+
