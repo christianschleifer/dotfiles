@@ -1,3 +1,11 @@
+""" ALREADY SHIPPED WITH INTELLIJ
+""" NERDTree is shipped with IntelliJ
+
+""" INSTALL THE FOLLOWING PLUGINS
+""" Which-Key
+""" IdeaVim-EasyMotion
+""" AceJump
+
 """ Map leader to space ---------------------
 let mapleader=" "
 
@@ -21,15 +29,15 @@ xmap <C-x> <Plug>SkipOccurrence
 nmap <C-p> <Plug>RemoveOccurrence
 xmap <C-p> <Plug>RemoveOccurrence
 
-
 """ which-key plugin
 set which-key
 set timeoutlen=10000
 
+""" easymotion plugin
 set easymotion
 map s <Plug>(easymotion-s)
 
-""" NERDtree plugin
+""" NERDTree plugin
 set NERDTree
 nnoremap <leader>e :NERDTreeFocus<CR>
 
@@ -39,8 +47,8 @@ nmap gn <Action>(ShowIntentionActions)
 nmap gc <Action>(EditorCompleteStatement)
 map <C-t> <Action>(Refactorings.QuickListPopupAction)
 
-""" emulate open buffers
+""" similar to open buffers in nvim
 nnoremap <leader>, :action RecentFiles<CR>
-""" emulate find files
+""" similar to Snacks search in nvim
 nnoremap <leader><leader> :action GotoFile<CR>
 
