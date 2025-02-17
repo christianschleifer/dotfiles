@@ -3,8 +3,6 @@
 
 """ INSTALL THE FOLLOWING PLUGINS
 """ Which-Key
-""" IdeaVim-EasyMotion
-""" AceJump
 
 """ Map leader to space ---------------------
 let mapleader=" "
@@ -32,10 +30,6 @@ xmap <C-p> <Plug>RemoveOccurrence
 """ which-key plugin
 set which-key
 set timeoutlen=10000
-
-""" easymotion plugin
-set easymotion
-map s <Plug>(easymotion-s)
 
 """ NERDTree plugin
 set NERDTree
