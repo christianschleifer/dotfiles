@@ -13,3 +13,6 @@ startup_mode = "Maximized"
 
 [colors.primary]
 background = "#222222"
+
+[font]
+size = 13.0
