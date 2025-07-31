@@ -935,40 +935,25 @@ require("lazy").setup({
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"MunifTanjim/nui.nvim",
-			"nvim-tree/nvim-web-devicons", -- optional, but recommended
 		},
 		lazy = false, -- neo-tree will lazily load itself
 		config = function()
 			vim.keymap.set("n", "<leader>e", "<Cmd>Neotree toggle<CR>", { desc = "Toggle Neo-tree" })
-		end,
-		opts = {
-			window = {
-				mappings = {
-					["<leader>e"] = "toggle_hidden",
-					["o"] = "open",
+			vim.keymap.set("n", "<f12>", "<Cmd>Neotree document_symbols<CR>", { desc = "Toggle symbol explorer" })
+			require("neo-tree").setup({
+				sources = {
+					"filesystem",
+					"buffers",
+					"git_status",
+					"document_symbols",
 				},
-			},
-		},
-	},
-}, {
-	ui = {
-		-- If you are using a Nerd Font: set icons to an empty table which will use the
-		-- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
-		icons = vim.g.have_nerd_font and {} or {
-			cmd = "⌘",
-			config = "🛠",
-			event = "📅",
-			ft = "📂",
-			init = "⚙",
-			keys = "🗝",
-			plugin = "🔌",
-			runtime = "💻",
-			require = "🌙",
-			source = "📄",
-			start = "🚀",
-			task = "📌",
-			lazy = "💤 ",
-		},
+				window = {
+					mappings = {
+						["o"] = "open",
+					},
+				},
+			})
+		end,
 	},
 })
 
