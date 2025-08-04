@@ -6,7 +6,6 @@ bind -M insert \cf accept-autosuggestion
 bind -M insert \cr history-pager repaint-mode
 bind -m insert \cr history-pager repaint-mode
 
-
 bind -M insert \cj down-or-search
 bind -M insert \ck up-or-search
 
@@ -27,6 +26,7 @@ end
 
 set -Ux VISUAL 'nvim'
 set -Ux EDITOR $VISUAL
+set -Ux LANG "en_US.UTF-8"
 
 # work specific include
 {{- if eq .chezmoi.config.data.work "true" }}
