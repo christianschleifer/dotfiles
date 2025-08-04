@@ -1,10 +1,9 @@
 [terminal.shell]
 program = "/opt/homebrew/bin/tmux"
-args = ["new-session", "-A", "-s", "main"]
+args = ["-u", "new-session", "-A", "-s", "main"]
 
 [env]
-# Follow https://unix.stackexchange.com/a/678901 to setup alacritty and test using infocmp
-TERM = "alacritty"
+TERM = "xterm-256color"
 
 [window]
 decorations = "Buttonless"
