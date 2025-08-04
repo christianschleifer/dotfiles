@@ -23,4 +23,6 @@ bind s split-window -v
 setw -g mode-keys vi
 bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "pbcopy"
 
+{{ if eq .chezmoi.os "darwin" -}}
 set -g mouse on
+{{- end}}
