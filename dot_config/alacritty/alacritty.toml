@@ -8,8 +8,9 @@ TERM = "alacritty"
 
 [window]
 decorations = "Buttonless"
-padding = { x = 10, y = 10 }
+padding = {x =  10, y = 10}
 startup_mode = "Maximized"
+option_as_alt = "Both"
 
 [colors.primary]
 background = "#222222"
