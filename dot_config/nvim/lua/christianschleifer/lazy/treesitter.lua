@@ -8,6 +8,7 @@ return {
 				"bash",
 				"c",
 				"diff",
+				"json",
 				"html",
 				"lua",
 				"luadoc",
@@ -17,6 +18,7 @@ return {
 				"vim",
 				"vimdoc",
 				"rust",
+				"python",
 			},
 			highlight = {
 				enable = true,
