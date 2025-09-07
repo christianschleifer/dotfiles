@@ -1,3 +1,16 @@
+local function toggle_neo_tree_focus()
+	-- Check if the current window is a Neo-tree buffer
+	if vim.bo.filetype == "neo-tree" then
+		-- If it is, execute the command to go to the previous window
+		vim.cmd("wincmd p")
+	else
+		-- Otherwise, focus the Neo-tree window
+		vim.cmd("Neotree focus")
+	end
+end
+
+-- Map this new function, for example, to your original <leader>e
+vim.keymap.set("n", "<leader>e", toggle_neo_tree_focus, { desc = "Toggle focus between file and Neo-tree" })
 return {
 	"nvim-neo-tree/neo-tree.nvim",
 	branch = "v3.x",
@@ -30,7 +43,7 @@ return {
 			},
 		})
 
-		vim.keymap.set("n", "<leader>e", "<Cmd>Neotree toggle<CR>", { desc = "Toggle Neo-tree" })
+		vim.keymap.set("n", "<leader>e", toggle_neo_tree_focus, { desc = "Focus Neo-tree" })
 		vim.keymap.set("n", "<f12>", "<Cmd>Neotree document_symbols<CR>", { desc = "Toggle symbol explorer" })
 	end,
 }
