@@ -13,8 +13,10 @@ return {
 			desc = "[F]ormat buffer",
 		},
 	},
+	---@module "conform"
+	---@type conform.setupOpts
 	opts = {
-		notify_on_error = false,
+		notify_on_error = true,
 		format_on_save = function(bufnr)
 			-- Disable "format_on_save lsp_fallback" for languages that don't
 			-- have a well standardized coding style. You can add additional
@@ -35,6 +37,13 @@ return {
 			python = { "black" },
 			-- You can use 'stop_after_first' to run the first available formatter from the list
 			-- javascript = { "prettierd", "prettier", stop_after_first = true },
+			json = { "jq" },
+			markdown = { "prettier" },
+		},
+		formatters = {
+			prettier = {
+				append_args = { "--print-width", "140", "--prose-wrap", "always" },
+			},
 		},
 	},
 }
