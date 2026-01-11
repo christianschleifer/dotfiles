@@ -1,6 +1,5 @@
 [terminal.shell]
-program = "/opt/homebrew/bin/tmux"
-args = ["-u", "new-session", "-A", "-s", "main"]
+program = "/opt/homebrew/bin/fish"
 
 [env]
 TERM = "xterm-256color"
