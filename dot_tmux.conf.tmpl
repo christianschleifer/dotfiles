@@ -18,8 +18,9 @@ bind k select-pane -U
 bind l select-pane -R
 
 # split panes using v and s
-bind v split-window -h
-bind s split-window -v
+bind v split-window -h -c "#{pane_current_path}"
+bind s split-window -v -c "#{pane_current_path}"
+bind c new-window -c "#{pane_current_path}"
 
 setw -g mode-keys vi
 
