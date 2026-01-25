@@ -12,3 +12,10 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 		vim.hl.on_yank()
 	end,
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "markdown", "markdown_inline", "java" },
+	callback = function()
+		vim.treesitter.start()
+	end,
+})
