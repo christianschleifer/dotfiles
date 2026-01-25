@@ -4,6 +4,7 @@ return {
 	event = "VimEnter",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
+		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 	},
 	config = function()
 		require("telescope").setup({})
@@ -36,5 +37,7 @@ return {
 		vim.keymap.set("n", "<leader>sn", function()
 			builtin.find_files({ cwd = vim.fn.stdpath("config") })
 		end, { desc = "[S]earch [N]eovim files" })
+
+		require("telescope").load_extension("fzf")
 	end,
 }
