@@ -7,7 +7,19 @@ return {
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 	},
 	config = function()
-		require("telescope").setup({})
+		require("telescope").setup({
+			defaults = {
+				vimgrep_arguments = {
+					"rg",
+					"--color=never",
+					"--no-heading",
+					"--with-filename",
+					"--line-number",
+					"--column",
+					"--smart-case",
+				},
+			},
+		})
 
 		-- See `:help telescope.builtin`
 		local builtin = require("telescope.builtin")
