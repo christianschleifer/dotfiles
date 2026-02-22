@@ -23,6 +23,12 @@ vim.opt.signcolumn = "yes"
 
 vim.opt.colorcolumn = "140"
 
+-- Auto-reload files changed outside of Neovim
+vim.opt.autoread = true
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
+	command = "checktime",
+})
+
 -- Decrease update time
 vim.opt.updatetime = 50
 
