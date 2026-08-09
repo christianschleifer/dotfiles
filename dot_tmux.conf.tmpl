@@ -4,7 +4,9 @@ set -g default-shell /usr/bin/fish
 set -g default-shell /opt/homebrew/bin/fish
 {{- end}}
 
-set -g default-terminal "xterm-256color"
+set -g default-terminal "tmux-256color"
+set -as terminal-features ",alacritty*:RGB:sync"
+set -g focus-events on
 
 # Unbind default prefix
 unbind C-b
