@@ -1,13 +1,14 @@
 return {
-	"sindrets/diffview.nvim",
-	cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewToggleFiles", "DiffviewFileHistory" },
+	"esmuellert/codediff.nvim",
+	cmd = "CodeDiff",
 	keys = {
-		{ "<leader>gd", "<cmd>DiffviewOpen<cr>", desc = "Diffview: Open" },
-		{ "<leader>gq", "<cmd>DiffviewClose<cr>", desc = "Diffview: Close" },
-		{ "<leader>gh", "<cmd>DiffviewFileHistory %<cr>", desc = "Diffview: File History" },
-		{ "<leader>ga", "<cmd>DiffviewFileHistory<cr>", desc = "Diffview: Project History" },
+		{ "<leader>gd", "<cmd>CodeDiff<cr>", desc = "CodeDiff: Open" },
+		{ "<leader>gh", "<cmd>CodeDiff history %<cr>", desc = "CodeDiff: File History" },
+		{ "<leader>ga", "<cmd>CodeDiff history<cr>", desc = "CodeDiff: Project History" },
 	},
 	opts = {
-		enhanced_diff_hl = true, -- Better syntax highlighting in diffs
+		diff = {
+			layout = "side-by-side",
+		},
 	},
 }
