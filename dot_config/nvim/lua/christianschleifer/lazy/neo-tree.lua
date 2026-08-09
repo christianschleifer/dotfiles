@@ -39,6 +39,14 @@ return {
 			window = {
 				mappings = {
 					["o"] = "open",
+					["Y"] = {
+						function(state)
+							local node = state.tree:get_node()
+							vim.fn.setreg("+", node.path)
+							vim.notify("Copied: " .. node.path)
+						end,
+						desc = "Copy absolute path",
+					},
 				},
 			},
 		})
