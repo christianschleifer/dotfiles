@@ -16,5 +16,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	spec = "christianschleifer.lazy",
+	lockfile = vim.fn.expand("~/.local/share/chezmoi/dot_config/nvim/lazy-lock.json"),
 	change_detection = { notify = false },
 })
