@@ -46,6 +46,11 @@ return {
 			ensure_installed = tools,
 		})
 
+		local lombok_agent = "-javaagent:" .. vim.fn.stdpath("data") .. "/mason/packages/jdtls/lombok.jar"
+		if not (vim.env.JDTLS_JVM_ARGS or ""):find(lombok_agent, 1, true) then
+			vim.env.JDTLS_JVM_ARGS = vim.trim(lombok_agent .. " " .. (vim.env.JDTLS_JVM_ARGS or ""))
+		end
+
 		vim.api.nvim_create_autocmd("LspAttach", {
 			group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
 			callback = function(event)
