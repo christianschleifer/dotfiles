@@ -1,0 +1,16 @@
+[
+  {
+    "context": "vim_mode == normal && !menu",
+    "bindings": {
+      "space e": "project_panel::ToggleFocus",
+      "space ,": "tab_switcher::Toggle",
+      "space space": "file_finder::Toggle"
+    }
+  },
+  {
+    "context": "TabSwitcher",
+    "bindings": {
+      ",": "tab_switcher::Toggle"
+    }
+  }
+]
