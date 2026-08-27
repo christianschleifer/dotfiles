@@ -1,5 +1,10 @@
 [
   {
+    "bindings": {
+      "ctrl ctrl": "projects::OpenRecent"
+    }
+  },
+  {
     "context": "vim_mode == normal && !menu",
     "bindings": {
       "space e": "project_panel::ToggleFocus",

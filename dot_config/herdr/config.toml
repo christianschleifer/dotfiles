@@ -27,8 +27,5 @@ auto_switch = false
 [ui]
 agent_panel_sort = "priority"
 
-[ui.sidebar.agents.rows_by_agent]
-codex = [["state_icon", "terminal_title_stripped", "tab"], ["agent"]]
-
 [ui.toast]
 delivery = "system"
