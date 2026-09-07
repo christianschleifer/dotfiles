@@ -9,7 +9,8 @@
     "bindings": {
       "space e": "project_panel::ToggleFocus",
       "space ,": "tab_switcher::Toggle",
-      "space space": "file_finder::Toggle"
+      "space space": "file_finder::Toggle",
+      "space z": "workspace::ToggleEditorZoom"
     }
   },
   {
