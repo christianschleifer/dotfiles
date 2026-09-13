@@ -1,6 +1,6 @@
-local function toggle_neo_tree_focus()
+local function toggle_neo_tree()
 	if vim.bo.filetype == "neo-tree" then
-		vim.cmd("wincmd p")
+		vim.cmd("Neotree close")
 	else
 		vim.cmd("Neotree focus")
 	end
@@ -46,7 +46,12 @@ return {
 			},
 		})
 
-		vim.keymap.set("n", "<leader>e", toggle_neo_tree_focus, { desc = "Toggle focus between file and Neo-tree" })
+		vim.keymap.set("n", "<leader>e", toggle_neo_tree, { desc = "Toggle Neo-tree" })
+		vim.keymap.set("n", "<D-1>", toggle_neo_tree, { desc = "Toggle Neo-tree" })
+		vim.keymap.set("i", "<D-1>", function()
+			vim.cmd("stopinsert")
+			toggle_neo_tree()
+		end, { desc = "Toggle Neo-tree" })
 		vim.keymap.set("n", "<f12>", "<Cmd>Neotree document_symbols<CR>", { desc = "Open symbol explorer" })
 	end,
 }
