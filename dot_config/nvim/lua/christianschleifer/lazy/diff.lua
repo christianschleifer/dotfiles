@@ -1,5 +1,6 @@
 return {
 	"esmuellert/codediff.nvim",
+	version = "4.*",
 	cmd = "CodeDiff",
 	keys = {
 		{ "<leader>gd", "<cmd>CodeDiff<cr>", desc = "CodeDiff: Open" },

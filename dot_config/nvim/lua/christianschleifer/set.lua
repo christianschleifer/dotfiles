@@ -3,7 +3,7 @@ vim.opt.relativenumber = true
 vim.opt.mouse = "a"
 vim.opt.showmode = false
 
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 
 -- Sync clipboard between OS and Neovim.
 --  Schedule the setting after `UiEnter` because it can increase startup-time.

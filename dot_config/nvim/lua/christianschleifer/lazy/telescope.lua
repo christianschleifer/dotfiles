@@ -32,7 +32,7 @@ return {
 		vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "Search with Grep" })
 		vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "Search Diagnostics" })
 		vim.keymap.set("n", "<leader>sr", builtin.resume, { desc = "Search Resume" })
-		vim.keymap.set("n", "<leader>srf", builtin.oldfiles, { desc = "Search Recent Files" })
+		vim.keymap.set("n", "<leader>so", builtin.oldfiles, { desc = "Search Recent Files" })
 		vim.keymap.set("n", "<leader>sb", builtin.buffers, { desc = "Search Buffers" })
 		vim.keymap.set("n", "<leader>/", builtin.current_buffer_fuzzy_find, { desc = "Fuzzy Search in Current Buffer" })
 
