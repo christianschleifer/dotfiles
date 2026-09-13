@@ -33,6 +33,9 @@ return {
 			},
 			window = {
 				mappings = {
+					["<esc>"] = function()
+						vim.cmd("wincmd p")
+					end,
 					["o"] = "open",
 					["Y"] = {
 						function(state)
