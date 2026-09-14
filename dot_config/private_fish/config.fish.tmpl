@@ -9,11 +9,13 @@ bind -m insert \cr history-pager repaint-mode
 bind -M insert \cj down-or-search
 bind -M insert \ck up-or-search
 
-fish_add_path /usr/local/bin 
+fish_add_path /usr/local/bin
+{{ if eq .chezmoi.os "darwin" }}
 fish_add_path /opt/homebrew/bin
-fish_add_path /Users/christian/.local/bin
-fish_add_path /Users/christian/go/bin
-fish_add_path /Users/christian/.cargo/bin
+{{ end }}
+fish_add_path $HOME/.local/bin
+fish_add_path $HOME/go/bin
+fish_add_path $HOME/.cargo/bin
 
 if command -v eza > /dev/null
 	abbr -a l 'eza'
@@ -30,7 +32,10 @@ set -Ux LANG "en_US.UTF-8"
 
 # work specific include
 {{- if eq .chezmoi.config.data.work "true" }}
-source $HOME/.cargo/env.fish
-source ~/.config/fish/work.fish
+if test -f $HOME/.cargo/env.fish
+	source $HOME/.cargo/env.fish
+end
+if test -f $HOME/.config/fish/work.fish
+	source $HOME/.config/fish/work.fish
+end
 {{- end }}
-

@@ -1,6 +1,6 @@
 onboarding = false
 [terminal]
-default_shell = "/opt/homebrew/bin/fish"
+default_shell = "{{ if eq .chezmoi.os "darwin" }}/opt/homebrew/bin/fish{{ else }}/usr/bin/fish{{ end }}"
 new_cwd = "follow"
 
 [keys]
