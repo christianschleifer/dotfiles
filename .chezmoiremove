@@ -1,0 +1,5 @@
+.tmux.conf
+.config/alacritty/alacritty.toml
+.config/zed/keymap.json
+.config/zed/settings.json
+.config/nvim/lua/christianschleifer/lazy/dashboard.lua

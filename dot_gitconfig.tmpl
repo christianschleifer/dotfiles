@@ -1,7 +1,9 @@
 [user]
     name = Christian Schleifer 
     email = {{ .email | quote }}
-    signingkey = {{ .git_signing_key | quote }}
+{{ if eq .chezmoi.os "darwin" }}
+    signingkey = {{ joinPath .chezmoi.homeDir ".ssh/github.pub" | quote }}
+{{ end }}
 
 [init]
     defaultBranch = {{ .git_default_branch | quote }}
@@ -20,8 +22,10 @@
     lsma = log --abbrev-commit --graph --all --decorate --pretty=format:"%C(yellow)%h%C(cyan)%d\\ %Creset%s%C(cyan)\\ [%cn]"
     co = checkout
 
+{{ if eq .chezmoi.os "darwin" }}
 [gpg]
     format = ssh
 
 [commit]
     gpgsign = true
+{{ end }}

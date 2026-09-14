@@ -50,11 +50,13 @@ return {
 		})
 
 		vim.keymap.set("n", "<leader>e", toggle_neo_tree, { desc = "Toggle Neo-tree" })
-		vim.keymap.set("n", "<D-1>", toggle_neo_tree, { desc = "Toggle Neo-tree" })
-		vim.keymap.set("i", "<D-1>", function()
-			vim.cmd("stopinsert")
-			toggle_neo_tree()
-		end, { desc = "Toggle Neo-tree" })
+		if vim.uv.os_uname().sysname == "Darwin" then
+			vim.keymap.set("n", "<D-1>", toggle_neo_tree, { desc = "Toggle Neo-tree" })
+			vim.keymap.set("i", "<D-1>", function()
+				vim.cmd("stopinsert")
+				toggle_neo_tree()
+			end, { desc = "Toggle Neo-tree" })
+		end
 		vim.keymap.set("n", "<f12>", "<Cmd>Neotree document_symbols<CR>", { desc = "Open symbol explorer" })
 	end,
 }
