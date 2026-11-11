@@ -2,3 +2,4 @@
 java = "path:/Library/Java/JavaVirtualMachines/amazon-corretto-25.jdk/Contents/Home"
 node = "path:/opt/homebrew/opt/node@24"
 python = "path:/opt/homebrew/opt/python@3.12/libexec"
+ruby = "path:/opt/homebrew/opt/ruby"
