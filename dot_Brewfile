@@ -19,6 +19,7 @@ brew "rust-analyzer"
 brew "tcl-tk"
 brew "tree-sitter-cli"
 brew "unison"
+brew "uv"
 brew "zlib"
 
 cask "corretto@8"
