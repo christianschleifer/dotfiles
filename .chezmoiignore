@@ -1,5 +1,7 @@
 README.md
 CLAUDE.md
 {{ if ne .chezmoi.os "darwin" }}
+.Brewfile
 .config/ghostty
+.config/mise
 {{ end }}

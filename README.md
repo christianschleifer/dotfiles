@@ -1,12 +1,20 @@
 # Dotfiles
 
-This repository contains my dotfiles used to configure the tools I use for programming. 
+Personal dotfiles managed with [chezmoi](https://www.chezmoi.io/).
 
-The files are managed using [chezmoi](https://www.chezmoi.io/).
+## Homebrew and mise
 
-Fish plugins are listed in `dot_config/private_fish/fish_plugins`. Install Fisher
-separately, then run `fisher update` in fish to install or update the listed plugins.
-Fisher itself is intentionally omitted from the plugin list. Chezmoi does not
-install plugins automatically.
+On an Apple Silicon Mac, install Homebrew and apply these dotfiles with chezmoi,
+then install the packages:
 
-Installed plugin files and fish's `fish_variables` remain unmanaged.
+```sh
+brew bundle --file="$HOME/.Brewfile"
+```
+
+Homebrew installs tools; mise selects the default Python, Node.js, and Java
+versions.
+
+## Fish plugins
+
+Plugins are listed in `dot_config/private_fish/fish_plugins`. With Fisher
+installed, run `fisher update` in Fish after applying the dotfiles.
