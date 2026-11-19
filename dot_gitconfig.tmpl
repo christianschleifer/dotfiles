@@ -1,7 +1,9 @@
+{{- $work := eq (printf "%v" .chezmoi.config.data.work) "true" -}}
+{{- $signCommits := and (eq .chezmoi.os "darwin") (not $work) -}}
 [user]
     name = Christian Schleifer 
     email = {{ .email | quote }}
-{{ if eq .chezmoi.os "darwin" }}
+{{ if $signCommits }}
     signingkey = {{ joinPath .chezmoi.homeDir ".ssh/github.pub" | quote }}
 {{ end }}
 
@@ -22,10 +24,13 @@
     lsma = log --abbrev-commit --graph --all --decorate --pretty=format:"%C(yellow)%h%C(cyan)%d\\ %Creset%s%C(cyan)\\ [%cn]"
     co = checkout
 
-{{ if eq .chezmoi.os "darwin" }}
+{{ if $signCommits }}
 [gpg]
     format = ssh
 
 [commit]
     gpgsign = true
+{{ else if $work }}
+[commit]
+    gpgsign = false
 {{ end }}

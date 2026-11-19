@@ -1,5 +1,8 @@
 README.md
 CLAUDE.md
+{{ if eq (printf "%v" .chezmoi.config.data.work) "true" }}
+.ssh/config
+{{ end }}
 {{ if ne .chezmoi.os "darwin" }}
 .Brewfile
 .config/ghostty
