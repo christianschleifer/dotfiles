@@ -12,3 +12,12 @@ rex.bind("\\>s", "pane.split", { direction = "down" })
 
 -- Press the prefix twice to send a literal backslash.
 rex.bind("\\>\\", "pane.send_key", { key = "\\" })
+
+-- Numbered tabs use the Herdr prefix instead of Cmd+number.
+for index = 1, 9 do
+  rex.bind("cmd+[Digit" .. index .. "]", "pane.send_key", { key = "cmd+" .. index })
+  rex.bind("\\>" .. index, "client.tab.goto", { index = index })
+end
+
+-- Activity overview.
+rex.bind("\\>.", "client.sidebar.activity.toggle")
